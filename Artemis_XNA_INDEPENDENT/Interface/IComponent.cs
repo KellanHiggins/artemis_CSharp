@@ -36,9 +36,13 @@
 
 namespace Artemis.Interface
 {
+
+    
+
     /// <summary>Empty Interface that all Components must extend.</summary>
     public interface IComponent
     {
+        int ComponentId { get; }
     }
 
     // TODO: int<int> = int - are you serious? Please explain that here so that anyone can understand the need. I still do have serious behaviors against this.

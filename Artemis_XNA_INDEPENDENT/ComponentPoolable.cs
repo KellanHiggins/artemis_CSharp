@@ -64,5 +64,7 @@ namespace Artemis
         public virtual void Initialize()
         {
         }
+
+        public int ComponentId { get { return -1; } }
     }
 }
