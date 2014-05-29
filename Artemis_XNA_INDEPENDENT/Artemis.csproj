@@ -35,8 +35,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;FULLDOTNET,FORCEINT32</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>..\bin\artemis.XML</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -100,6 +99,7 @@
     <Compile Include="System\EntitySystem.cs" />
     <Compile Include="System\HybridQueueSystemProcessing.cs" />
     <Compile Include="System\IntervalEntityProcessingSystem.cs" />
+    <Compile Include="System\IntervalProcessingSystem.cs" />
     <Compile Include="System\IntervalEntitySystem.cs" />
     <Compile Include="System\IntervalTagSystem.cs" />
     <Compile Include="System\ParallelEntityProcessingSystem.cs" />
