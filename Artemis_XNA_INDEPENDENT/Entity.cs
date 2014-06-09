@@ -61,6 +61,9 @@ namespace Artemis
         /// <summary>The entity world.</summary>
         private readonly EntityWorld entityWorld;
 
+        /// <summary> A list of all present components in the entity. Used to quickly retrieve all the components in an entity</summary>
+        private Bag<IComponent> entityComponents;
+
         /// <summary>
         /// The unique id.
         /// This ID is unique in Artemis (even if the Entity is reused)
@@ -79,20 +82,24 @@ namespace Artemis
             this.entityWorld = entityWorld;
             this.entityManager = entityWorld.EntityManager;
             this.Id = id;
+            this.entityComponents = new Bag<IComponent>();
         }
 
         /// <summary>
         ///   <para>Gets all components belonging to this entity.</para>
-        ///   <para>Warning: Use only for debugging purposes, it is dead slow.</para>
-        ///   <para>The returned bag is only valid until this method is called</para>
-        ///   <para>again, then it is overwritten.</para>
+        ///   <para>The components are stored within a private variable that is updated</para>
+        ///   <para>each time the entity has components added or removed</para>
         /// </summary>
         /// <value>All components of this entity.</value>
         public Bag<IComponent> Components
         {
             get
             {
-                return this.entityManager.GetComponents(this);
+                return this.entityComponents;
+            }
+            internal set
+            {
+                this.entityComponents = value;
             }
         }
 
@@ -295,6 +302,7 @@ namespace Artemis
             }
 
             this.entityWorld.RefreshEntity(this);
+            
             this.RefreshingState = true;
         }
 

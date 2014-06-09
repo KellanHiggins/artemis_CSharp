@@ -419,6 +419,7 @@ namespace Artemis
 				this.refreshed.Add(entity);
 			}
 #else
+            entity.Components = this.EntityManager.GetComponents(entity);  // May cause a performance hit. Each time an entity is updated, their component bag is reset.
             this.refreshed.Add(entity);
 #endif
         }
