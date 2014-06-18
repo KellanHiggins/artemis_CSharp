@@ -323,6 +323,14 @@ namespace Artemis
             this.entityManager.RemoveComponent(this, componentType);
         }
 
+        /// <summary>
+        /// Refreshes the store bag of components for this entity
+        /// </summary>
+        public void RefreshComponentBag()
+        {
+            entityComponents = this.entityManager.GetComponents(this);
+        }
+
         /// <summary>Resets this instance.</summary>
         public void Reset()
         {

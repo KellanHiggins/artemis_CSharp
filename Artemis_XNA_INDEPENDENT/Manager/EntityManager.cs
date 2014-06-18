@@ -379,9 +379,12 @@ namespace Artemis.Manager
                 }
         
                 entity.RemoveTypeBit(componentType.Bit);
-                this.entityWorld.RefreshEntity(entity);
+                //this.entityWorld.RefreshEntity(entity);
                 components.Set(entityId, null);
             }
+            // Moved the refreshed to here so that it refreshes no matter what (even if component isn't removed)
+            // This is so the stored bag of references for the entity is updated.
+            this.entityWorld.RefreshEntity(entity);
         }
         
         /// <summary>Strips all components from the given entity.</summary>
