@@ -52,7 +52,6 @@ namespace Artemis.System
 
         /// <summary>Initializes a new instance of the <see cref="IntervalProcessingSystem"/> class.</summary>
         /// <param name="timeSpan">The time span.</param>
-        /// <param name="types">The types.</param>
         protected IntervalProcessingSystem(TimeSpan timeSpan)
         {
             this.timer = new Timer(timeSpan);
