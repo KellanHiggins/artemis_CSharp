@@ -117,16 +117,18 @@ namespace Artemis.System
         /// <summary>Processes this instance.</summary>
         public override void Process()
         {
+            
             if (!this.IsEnabled)
             {
                 return;
             }
-
+            Begin();
             int size = this.queue.Count > this.EntitiesToProcessEachFrame ? this.EntitiesToProcessEachFrame : this.queue.Count;
             for (int index = 0; index < size; ++index)
             {
                 this.Process(this.queue.Dequeue());
             }
+            End();
         }
 
         /*
