@@ -33,9 +33,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\..\..\ComplexServer\packages\Artemis1-4\</OutputPath>
     <DefineConstants>DEBUG;FULLDOTNET,FORCEINT32</DefineConstants>
-    <DocumentationFile>C:\experiments\artemis_CSharp\bin\artemis.xml</DocumentationFile>
+    <DocumentationFile>C:\zombieserver\ComplexServer\packages\Artemis1-4\.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -104,6 +104,7 @@
     <Compile Include="System\IntervalTagSystem.cs" />
     <Compile Include="System\ParallelEntityProcessingSystem.cs" />
     <Compile Include="System\ProcessingSystem.cs" />
+    <Compile Include="System\QueueTwoEntityInteractionSystemProcessing.cs" />
     <Compile Include="System\QueueSystemProcessing.cs" />
     <Compile Include="System\QueueSystemProcessingThreadSafe.cs" />
     <Compile Include="System\TagSystem.cs" />
