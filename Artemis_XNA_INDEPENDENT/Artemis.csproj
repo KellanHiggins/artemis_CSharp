@@ -104,6 +104,7 @@
     <Compile Include="System\IntervalTagSystem.cs" />
     <Compile Include="System\ParallelEntityProcessingSystem.cs" />
     <Compile Include="System\ProcessingSystem.cs" />
+    <Compile Include="System\MultiFrameQueueSystemProcessing.cs" />
     <Compile Include="System\QueueTwoEntityInteractionSystemProcessing.cs" />
     <Compile Include="System\QueueSystemProcessing.cs" />
     <Compile Include="System\QueueSystemProcessingThreadSafe.cs" />
