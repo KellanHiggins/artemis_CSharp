@@ -35,7 +35,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\..\ComplexServer\packages\Artemis1-4\</OutputPath>
     <DefineConstants>DEBUG;FULLDOTNET,FORCEINT32</DefineConstants>
-    <DocumentationFile>C:\zombieserver\ComplexServer\packages\Artemis1-4\.xml</DocumentationFile>
+    <DocumentationFile>C:\zombieserver\ComplexServer\packages\Artemis1-4\artemis.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
