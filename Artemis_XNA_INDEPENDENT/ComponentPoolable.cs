@@ -66,5 +66,6 @@ namespace Artemis
         }
 
         public int ComponentId { get { return -1; } }
+        public bool IsSerializable { get { return false; } }
     }
 }

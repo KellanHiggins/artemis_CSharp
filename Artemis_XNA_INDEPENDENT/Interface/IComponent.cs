@@ -42,8 +42,15 @@ namespace Artemis.Interface
     /// <summary>Empty Interface that all Components must extend.</summary>
     public interface IComponent
     {
+        /// <summary>
+        /// Component Id related to the database
+        /// </summary>
         int ComponentId { get; }
-        
+
+        /// <summary>
+        /// Will this component get serialized into or out of the database
+        /// </summary>
+        bool IsSerializable { get; }
     }
 
     // TODO: int<int> = int - are you serious? Please explain that here so that anyone can understand the need. I still do have serious behaviors against this.
@@ -53,5 +60,6 @@ namespace Artemis.Interface
     [global::System.Obsolete("Use entity.AddComponent(derived as BaseComponent) if you intend to use derived component as a base component", true)]
     public interface IComponent<T> : IComponent where T : IComponent
     {
+
     }
 }
