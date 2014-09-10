@@ -233,6 +233,7 @@ namespace Artemis.Manager
 
             this.ActiveEntities.Set(entity.Id, null);
             this.RemoveComponentsOfEntity(entity);
+            entity.RefreshComponentBag();
 #if DEBUG
             --this.EntitiesRequestedCount;
 
@@ -394,7 +395,6 @@ namespace Artemis.Manager
             Debug.Assert(entity != null, "Entity must not be null.");
 
             entity.TypeBits = 0;
-            this.entityWorld.RefreshEntity(entity);
             
             int entityId = entity.Id;
             for (int index = this.componentsByType.Count - 1; index >= 0; --index)
@@ -411,6 +411,13 @@ namespace Artemis.Manager
                     components.Set(entityId, null);
                 }
             }
+
+            // Sets the lagging behind bag to empty
+            entity.Components.Clear();
+
+            // Refreshes the entity to ensure that the components that were wiped are removed from the component system.
+            // Originally the entity was refreshed before all the components were removed.
+            this.entityWorld.RefreshEntity(entity);
         }
 
         /// <summary>Entities the manager removed component event.</summary>

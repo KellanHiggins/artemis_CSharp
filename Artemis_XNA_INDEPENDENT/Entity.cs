@@ -247,6 +247,7 @@ namespace Artemis
             }
 
             this.entityWorld.DeleteEntity(this);
+            this.ClearComponents(); // clears the fake component bag because we know this will be deleted next update
             this.DeletingState = true;
         }
 
@@ -331,12 +332,21 @@ namespace Artemis
             entityComponents = this.entityManager.GetComponents(this);
         }
 
+        /// <summary>
+        /// Clears the bag with all the components in it;
+        /// </summary>
+        internal void ClearComponents()
+        {
+            entityComponents.Clear();
+        }
+
         /// <summary>Resets this instance.</summary>
         public void Reset()
         {
             this.SystemBits = 0;
             this.TypeBits = 0;
             this.IsEnabled = true;
+            this.ClearComponents();
         }
 
         /// <summary>Returns a <see cref="string" /> that represents this instance.</summary>
@@ -373,5 +383,7 @@ namespace Artemis
         {
             this.TypeBits &= ~bit;
         }
+
+
     }
 }
