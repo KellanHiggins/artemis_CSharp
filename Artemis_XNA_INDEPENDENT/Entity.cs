@@ -340,7 +340,7 @@ namespace Artemis
             entityComponents.Clear();
         }
 
-        /// <summary>Resets this instance.</summary>
+        /// <summary>Resets the entity to default and clears all components.</summary>
         public void Reset()
         {
             this.SystemBits = 0;
