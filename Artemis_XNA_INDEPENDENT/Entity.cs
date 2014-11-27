@@ -333,6 +333,14 @@ namespace Artemis
         }
 
         /// <summary>
+        /// Removes all components from this entity, reducing component count to zero
+        /// </summary>
+        public void RemoveAllComponents()
+        {
+            this.entityWorld.EntityManager.RemoveComponentsOfEntity(this);
+        }
+
+        /// <summary>
         /// Clears the bag with all the components in it;
         /// </summary>
         internal void ClearComponents()
@@ -341,12 +349,12 @@ namespace Artemis
         }
 
         /// <summary>Resets the entity to default and clears all components.</summary>
-        public void Reset()
+        internal void Reset()
         {
             this.SystemBits = 0;
             this.TypeBits = 0;
             this.IsEnabled = true;
-            this.ClearComponents();
+            this.ClearComponents(); 
         }
 
         /// <summary>Returns a <see cref="string" /> that represents this instance.</summary>
