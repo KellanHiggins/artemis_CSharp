@@ -52,6 +52,9 @@ namespace Artemis.System
         /// <summary>The queue.</summary>
         private readonly Queue<Entity> queue;
 
+        /// <summary> The queue to inspect for duplicates </summary>
+        protected Queue<Entity> Queue { get { return queue; } }
+
         /// <summary>Initializes a new instance of the <see cref="QueueSystemProcessing"/> class.</summary>
         public QueueSystemProcessing()
         {
