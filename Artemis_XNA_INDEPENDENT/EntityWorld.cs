@@ -362,11 +362,12 @@ namespace Artemis
                 for (int index = this.deleted.Count - 1; index >= 0; --index)
                 {
                     Entity entity = this.deleted.Get(index);
-                    entity.ClearComponents();
                     this.TagManager.Unregister(entity);
                     this.GroupManager.Remove(entity);
                     this.EntityManager.Remove(entity);
                     entity.DeletingState = false;
+
+                    entity.ClearComponents(); // Clears the components from the cached component bag
                 }
 
                 this.deleted.Clear();

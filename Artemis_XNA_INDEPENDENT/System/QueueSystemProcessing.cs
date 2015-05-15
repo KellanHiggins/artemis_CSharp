@@ -83,6 +83,19 @@ namespace Artemis.System
             this.queue.Enqueue(entity);
         }
 
+        /// <summary>
+        /// Adds to queue in a frame and ensures no duplicates are added to the queue
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        public virtual void AddToQueueNoDuplicates(Entity entity)
+        {
+            // Ensures that the queue does not get multiple players added to it and have major problems
+            if (this.Queue.Contains(entity) == false)
+            {
+                this.AddToQueue(entity);
+            }
+        }
+
         /// <summary>Override to implement code that gets executed when systems are initialized.</summary>
         public override void LoadContent()
         {

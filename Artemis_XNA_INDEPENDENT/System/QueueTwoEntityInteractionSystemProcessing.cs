@@ -136,7 +136,8 @@ namespace Artemis.System
 
         protected void Process(Entity[] entities)
         {
-            Process(entities[0], entities[1]);
+            if(entities != null && entities[0] != null && entities[1] != null)
+                Process(entities[0], entities[1]);
         }
     }
 }

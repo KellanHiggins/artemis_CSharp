@@ -395,6 +395,7 @@ namespace Artemis.Manager
             Debug.Assert(entity != null, "Entity must not be null.");
 
             entity.TypeBits = 0;
+            entityWorld.RefreshEntity(entity);
             
             int entityId = entity.Id;
             for (int index = this.componentsByType.Count - 1; index >= 0; --index)

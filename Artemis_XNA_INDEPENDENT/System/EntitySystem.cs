@@ -205,7 +205,7 @@ namespace Artemis.System
             {
                 this.Enable(entity);
             }
-            else if (interest && contains && !entity.IsEnabled)
+            else if (interest && contains && entity.IsEnabled == false)
             {
                 this.Disable(entity);
             }
