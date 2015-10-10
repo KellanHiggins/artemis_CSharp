@@ -46,11 +46,6 @@ namespace Artemis.Interface
         /// Component Id related to the database
         /// </summary>
         int ComponentId { get; }
-
-        /// <summary>
-        /// Will this component get serialized into or out of the database
-        /// </summary>
-        bool IsSerializable { get; }
     }
 
     // TODO: int<int> = int - are you serious? Please explain that here so that anyone can understand the need. I still do have serious behaviors against this.
