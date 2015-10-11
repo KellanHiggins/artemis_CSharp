@@ -413,6 +413,11 @@ namespace Artemis
             this.SystemManager.TerminateAll();
         }
 
+        public T GetSystem<T>() where T : Artemis.System.EntitySystem
+        {
+            return SystemManager.GetSystem<T>();
+        }
+
         /// <summary>Refreshes the entity.</summary>
         /// <param name="entity">The entity.</param>
         internal void RefreshEntity(Entity entity)
